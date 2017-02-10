@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
-    <div>    
+<body id="main">
+    <div>
         <h1>You've been alone for </h1>
         <h1 id="timer"> 0d 0h 0m 0s</h1>
     </div>
@@ -40,5 +40,14 @@
             + minutes + "m " + seconds + "s ";
 
         }, 1000);
+
+        var imageArray = ["a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg", "f.jpg", "g.jpg"];
+
+        function displayImage(){
+            var num = Math.floor(Math.random() * imageArray.length);
+            document.getElementById('main').style = `background-image: url(images/${imageArray[num]})`
+        }
+        displayImage();
+        var changeImage = setInterval(displayImage, 10000);
     </script>
 </body>
