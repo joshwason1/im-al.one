@@ -9,6 +9,8 @@
 </head>
 <body>
     <h1>Alone...</h1>
-    <audio autoplay loop src="all by my self - celine dion.mp3" type="audio/mpeg" style="display:none">
-
+    <audio id="song" autoplay loop src="all by my self - celine dion.mp3" type="audio/mpeg" style="display:none" volume="0.5">
+    <script>
+        document.getElementById('song').volume = 0.5;
+    </script>
 </body>
