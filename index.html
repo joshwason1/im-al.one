@@ -12,32 +12,27 @@
 <body id="main">
     <div>
         <h1>You've been alone for </h1>
-        <h1 id="timer"> 0d 0h 0m 0s</h1>
+        <h1 id="timer"> 0h 0m 0s</h1>
     </div>
 
     <audio id="song" autoplay loop src="all by my self - celine dion.mp3" type="audio/mpeg" style="display:none" volume="0.5">
     <script>
         document.getElementById('song').volume = 0.5;
 
-        var start = new Date().getTime();
+        var time = 0;
+        time = localStorage.getItem("time");
 
         var x = setInterval(function() {
-
-            // Get todays date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now an the count down date
-            var distance = now - start;
+            time++;
 
             // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            var hours = Math.floor(time / (60 * 60));
+            var minutes = Math.floor((time % (60 * 60)) / 60);
+            var seconds = Math.floor((time % 60));
 
-            // Output the result in an element with id="demo"
-            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
+            localStorage.setItem("time", time);
+
+            document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
 
         }, 1000);
 
