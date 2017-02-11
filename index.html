@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body id="main">
-    <div>
-        <h1>You've been alone for </h1>
-        <h1 id="timer"> 0h 0m 0s</h1>
-    </div>
+<body>
+    <div id="main" style="display:inline"></div>
+    <div id="secondary" style="display:none"></div>
 
-    <audio id="song" autoplay loop src="all by my self - celine dion.mp3" type="audio/mpeg" style="display:none" volume="0.5">
+        <div id=text>
+            <h1>You've been alone for </h1>
+            <h1 id="timer"> 0h 0m 0s</h1>
+        </div>
+
+        <audio id="song" autoplay loop src="all by my self - celine dion.mp3" type="audio/mpeg" style="display:none" volume="0.5">
     <script>
         document.getElementById('song').volume = 0.5;
 
@@ -39,11 +42,26 @@
         var imageArray = ["a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg", "f.jpg", "g.jpg", "h.gif",  "i.gif", "j.gif", "k.png", "l.gif",
             "m.gif", "n.gif", "o.jpg", "p.gif", "q.gif", "r.gif"];
 
-        function displayImage(){
+        function changeImage(){
             var num = Math.floor(Math.random() * imageArray.length);
-            document.getElementById('main').style = `background-image: url(images/${imageArray[num]})`
+            if (document.getElementById('main').style.display == "inline") {
+                document.getElementById('main').style.display = "none";
+                document.getElementById('secondary').style.display = "inline";
+                document.getElementById('main').style.backgroundImage = `url(images/${imageArray[num]})`;
+            } else {
+                document.getElementById('secondary').style.display = "none";
+                document.getElementById('main').style.display = "inline";
+                document.getElementById('secondary').style.backgroundImage = `url(images/${imageArray[num]})`;
+            }
         }
-        displayImage();
-        var changeImage = setInterval(displayImage, 10000);
+        function initialImage() {
+            var i = Math.floor(Math.random() * imageArray.length);
+            document.getElementById('main').style.backgroundImage = `url(images/${imageArray[i]})`;
+            var j = Math.floor(Math.random() * imageArray.length);
+            document.getElementById('secondary').style.backgroundImage = `url(images/${imageArray[j]})`;
+        }
+
+        initialImage();
+        var changeImage = setInterval(changeImage, 10000);
     </script>
 </body>
