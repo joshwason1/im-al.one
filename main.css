@@ -30,7 +30,32 @@
     margin: 0px;
 }
 
+#footer {
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
 h1 {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-family: "Open Sans";
+    display: inline;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+p {
     padding: 0px;
     margin: 0px;
     color: white;
