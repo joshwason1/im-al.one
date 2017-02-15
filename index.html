@@ -20,7 +20,7 @@
         <div id="footer">
             <p>Site created by joshwason1</p>
         </div>
-        <audio id="song" autoplay loop src="all by my self - celine dion.mp3" type="audio/mpeg" style="display:none" volume="0.5">
+        <audio id="song" autoplay loop src="bgm.mp3" type="audio/mpeg" style="display:none" volume="0.5">
     <script>
         document.getElementById('song').volume = 0.5;
 
@@ -37,12 +37,12 @@
 
             localStorage.setItem("time", time);
 
-            document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            document.getElementById("timer").innerHTML = " " + hours + "h " + minutes + "m " + seconds + "s ";
 
         }, 1000);
 
         var imageArray = ["a.jpg", "b.jpg", "c.jpg", "d.jpg", "e.jpg", "f.jpg", "g.jpg", "h.gif",  "i.gif", "j.gif", "k.png", "l.gif",
-            "m.gif", "n.gif", "o.jpg", "p.gif", "q.gif", "r.gif", "s.gif"];
+            "m.gif", "n.gif", "o.jpg", "p.gif", "q.gif", "r.gif", "s.gif", "t.gif", "u.gif"];
 
         function changeImage(){
             var num = Math.floor(Math.random() * imageArray.length);
