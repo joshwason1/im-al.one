@@ -15,8 +15,7 @@
     <div id="secondary" style="display:none"></div>
 
         <div id=text>
-            <h1>You've been alone for </h1>
-            <h1 id="timer"> 0h 0m 0s</h1>
+            <h1 id="timer">You've been alone for 0h 0m 0s</h1>
         </div>
         <div id="footer">
             <p>Site created by joshwason1</p>
@@ -38,7 +37,7 @@
 
             localStorage.setItem("time", time);
 
-            document.getElementById("timer").innerHTML = " " + hours + "h " + minutes + "m " + seconds + "s ";
+            document.getElementById("timer").innerHTML = "You've been alone for " + hours + "h " + minutes + "m " + seconds + "s ";
 
         }, 1000);
 
